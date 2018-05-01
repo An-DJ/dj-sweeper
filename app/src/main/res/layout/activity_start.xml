@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#29b6f6"
+    android:orientation="vertical"
+    tools:context="me.andj.djsweeper.activity.StartActivity">
+    <Button
+        android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/start_activity_setting_button"
+        android:layout_gravity="right"
+        android:layout_width="50dp"
+        android:background="@drawable/setting"
+        android:layout_height="50dp" />
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="361dp"
+        android:layout_height="224dp"
+        android:layout_marginTop="5dp"
+        android:background="#3949ab"
+        android:src="@mipmap/start_head" />
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="Play"
+            android:id="@+id/start_activity_play_button"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#e53935" />
+        <Button
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginTop="5dp"
+            android:id="@+id/start_activity_statistics_button"
+            android:text="Statistics"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#3949ab"/>
+        <Button
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginTop="5dp"
+            android:id="@+id/start_activity_more_button"
+            android:text="More"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#4caf50"/>
+        <Button
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginTop="5dp"
+            android:id="@+id/start_activity_about_button"
+            android:text="About"
+            android:layout_gravity="center"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#673ab7"/>
+    </LinearLayout>
+
+</LinearLayout>

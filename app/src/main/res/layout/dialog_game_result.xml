@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:background="@mipmap/success_dialog_background">
+
+    <TextView
+        android:id="@+id/dialog_game_result_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Successful!"
+        android:textColor="#e53935"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="50dp"/>
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/dialog_game_result_again_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#32a69a00"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Again"/>
+        <Button
+            android:id="@+id/dialog_game_result_stay_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#32897b00"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Stay"/>
+    </LinearLayout>
+</LinearLayout>

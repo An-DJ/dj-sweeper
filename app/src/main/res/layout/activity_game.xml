@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/activity_game_progress_button"
+                android:text="0/0"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/activity_game_time_button"
+                android:text="0s"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/activity_game_mines_button"
+                android:text="0/0"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="progress"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047" />
+        <TextView
+            android:text="time"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047" />
+        <TextView
+            android:text="mines"
+            android:textStyle="italic|bold"
+            android:textAlignment="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="#43a047" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#4dd0e1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<GridLayout-->
+            <!--android:id="@+id/game_area_grid_layout"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#000000">-->
+        <!--</GridLayout>-->
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+            <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <GridLayout
+                    android:id="@+id/game_area_grid_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff">
+                </GridLayout>
+            </HorizontalScrollView>
+        </ScrollView>
+    </LinearLayout>
+
+
+</LinearLayout>

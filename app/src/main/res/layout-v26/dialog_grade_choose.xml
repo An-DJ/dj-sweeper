@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#b2dfbd"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="column:"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/seekbar_column"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:max="21"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"/>
+
+            <TextView
+                android:id="@+id/text_view_column"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="Value:9"
+                android:textColor="#16BC5C"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#80cbc4"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="row:"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/seekbar_row"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:max="21"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"/>
+
+            <TextView
+                android:id="@+id/text_view_row"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="Value:9"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4db6ac"
+        android:orientation="vertical">
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="mines:"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/seekbar_mines"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:max="24"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"/>
+
+            <TextView
+                android:id="@+id/text_view_mines"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="left"
+                android:padding="6dp"
+                android:text="Value:5"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/dialog_grade_choose_start_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#26a69a"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Start"/>
+        <Button
+            android:id="@+id/dialog_grade_choose_cancel_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="#00897b"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:text="Cancel"/>
+    </LinearLayout>
+
+</LinearLayout>
