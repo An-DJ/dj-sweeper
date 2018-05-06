@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MineSweeper</string>
+    <string name="introduce">\t\t I\'m an Android developer, a Google fans, a big data science liker
+     and a material design liker, who is interested in every funny technology.</string>
 </resources>

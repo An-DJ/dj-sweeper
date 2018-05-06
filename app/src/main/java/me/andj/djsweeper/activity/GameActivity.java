@@ -3,12 +3,19 @@ package me.andj.djsweeper.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+
+import java.util.Calendar;
+
+import me.andj.djsweeper.MyApplication;
 import me.andj.djsweeper.R;
+import me.andj.djsweeper.database.DataBase;
+import me.andj.djsweeper.database.bean.Recode;
 import me.andj.djsweeper.dialog.GameResultDialog;
 import me.andj.djsweeper.view.GameBlockButton;
 
@@ -32,12 +39,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private int unFindMines=0;
     private int unCheckedBlocks=0;
     private boolean isStarted=false;
+    private boolean clickEnable=true;
     private Thread checkResultThread=null;
     private Thread flushTimeThread=null;
     private long startTime=0;
     private Button progressButton;
     private Button timeButton;
     private Button minesButton;
+    private Vibrator vibrator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,7 +55,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         mContext=this;
         initial();
         Intent intent=getIntent();
-        row=intent.getIntExtra("row",10);
+        row=intent.getIntExtra("raw",10);
         column=intent.getIntExtra("column",10);
         minesNum=intent.getIntExtra("mines",10);
 
@@ -58,9 +67,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         progressButton=findViewById(R.id.activity_game_progress_button);
         timeButton=findViewById(R.id.activity_game_time_button);
         minesButton=findViewById(R.id.activity_game_mines_button);
+        vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
     }
 
     public void startGame(){
+        clickEnable=true;
         //stop the thread of checking the game result.
         if (checkResultThread!=null){
             //if (checkResultThread.isAlive())
@@ -131,6 +142,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                             public void run() {
                                 GameResultDialog dialog=new GameResultDialog(mContext,true);
                                 dialog.show();
+                                storeRecode(true);
+                                clickEnable=false;
                             }
                         });
                     }
@@ -175,12 +188,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             button=(GameBlockButton) gameAreaGridLayout.getChildAt(i);
             button.openBlock();
         }
+        clickEnable=false;
     }
 
     @Override
     public boolean onLongClick(View view) {
+        if(!clickEnable) return false;
         GameBlockButton button=(GameBlockButton)view;
         if(button.isFlag()){
+            //MyApplication application=(MyApplication) getApplication();
+            if (MyApplication.shakeAble)
+                vibrator.vibrate(30);
             button.cleanFlag();
             //increase the un-find mines by one step and flush.
             unFindMines++;
@@ -188,6 +206,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         else if (button.isUnchecked()){
+            if (MyApplication.shakeAble)
+                vibrator.vibrate(30);
             button.setFlag();
             //decrease the un-find mines by one step and flush.
             unFindMines--;
@@ -198,6 +218,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        if(!clickEnable) return;
         GameBlockButton button=(GameBlockButton)view;
         if(!isStarted) {
             isStarted=true;
@@ -207,6 +228,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (!button.isClickEnable) return;
         if(button.isMine()){
             expandAll();
+            // shake for failed.
+            if (MyApplication.shakeAble)
+                vibrator.vibrate(100);
 
             isStarted=false;
 
@@ -214,6 +238,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
             GameResultDialog dialog=new GameResultDialog(mContext,false);
             dialog.show();
+            storeRecode(false);
             return;
         }
         floodFill(button.getRow(),button.getColumn());
@@ -275,5 +300,14 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             flushTimeThread=null;
         }
         super.onDestroy();
+    }
+
+    private void storeRecode(boolean result){
+        Calendar calendar=Calendar.getInstance();
+        String second=timeButton.getText().toString();
+        Recode recode=new Recode(null,calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH)+1,calendar.get(Calendar.DAY_OF_MONTH),column,row,minesNum,
+                Integer.parseInt(second.substring(0,second.length()-1)), result);
+        DataBase.insertRecode(recode);
     }
 }

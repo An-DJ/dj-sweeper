@@ -4,10 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 
 import me.andj.djsweeper.R;
@@ -49,17 +46,17 @@ public class DifficultyDialog extends Dialog implements View.OnClickListener{
         Intent intent=new Intent(getContext(), GameActivity.class);
         switch (view.getId()){
             case R.id.dialog_difficulty_easy_button:
-                intent.putExtra("row",9);
+                intent.putExtra("raw",9);
                 intent.putExtra("column",9);
                 intent.putExtra("mines",10);
                 break;
             case R.id.dialog_difficulty_medium_button:
-                intent.putExtra("row",16);
+                intent.putExtra("raw",16);
                 intent.putExtra("column",16);
                 intent.putExtra("mines",30);
                 break;
             case R.id.dialog_difficulty_hard_button:
-                intent.putExtra("row",25);
+                intent.putExtra("raw",25);
                 intent.putExtra("column",25);
                 intent.putExtra("mines",100);
                 break;

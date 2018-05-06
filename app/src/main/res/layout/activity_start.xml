@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#29b6f6"
+    android:background="#b2dfdb"
     android:orientation="vertical"
     tools:context="me.andj.djsweeper.activity.StartActivity">
     <Button
@@ -14,13 +14,21 @@
         android:layout_width="50dp"
         android:background="@drawable/setting"
         android:layout_height="50dp" />
-    <ImageView
-        android:layout_gravity="center"
-        android:layout_width="361dp"
-        android:layout_height="224dp"
-        android:layout_marginTop="5dp"
-        android:background="#3949ab"
-        android:src="@mipmap/start_head" />
+    <android.support.v7.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp">
+        <ImageView
+            android:layout_width="361dp"
+            android:layout_height="224dp"
+            android:background="#3949ab"
+            android:src="@mipmap/start_head" />
+    </android.support.v7.widget.CardView>
+
     <LinearLayout
         android:layout_marginTop="8dp"
         android:layout_gravity="center"
@@ -43,7 +51,7 @@
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="#3949ab"/>
+            android:background="#4caf50"/>
         <Button
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_marginTop="5dp"
@@ -52,7 +60,7 @@
             android:layout_gravity="center"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:background="#4caf50"/>
+            android:background="#795548"/>
         <Button
             android:foreground="?android:attr/selectableItemBackground"
             android:layout_marginTop="5dp"

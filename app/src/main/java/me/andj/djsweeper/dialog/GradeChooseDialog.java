@@ -30,11 +30,15 @@ public class GradeChooseDialog extends Dialog {
     private TextView columnTextView;
     private TextView rowTextView;
     private TextView minesTextView;
+    private TextView minesRangeTextView;
     private Button StartButton;
     private Button CancelButton;
     private int columns = 9;
     private int rows=9;
-    private int mines=5;
+    private int maxMines=(int)(columns*rows*0.37);
+    private int minMines=(int)(columns*rows*0.07);
+    private int mines=minMines;
+
 
 
     public GradeChooseDialog(@NonNull final Context context) {
@@ -48,6 +52,8 @@ public class GradeChooseDialog extends Dialog {
         minesTextView=findViewById(R.id.text_view_mines);
         StartButton=findViewById(R.id.dialog_grade_choose_start_button);
         CancelButton=findViewById(R.id.dialog_grade_choose_cancel_button);
+        minesRangeTextView=findViewById(R.id.dialog_grade_text_view_range_mines);
+        minesRangeTextView.setText("mines["+String.valueOf(minMines)+":"+String.valueOf(maxMines)+"]:");
 
 
         columnSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -56,6 +62,16 @@ public class GradeChooseDialog extends Dialog {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 columnTextView.setText("Value:" + Integer.toString(progress+9));
                 columns=progress+9;
+                maxMines=(int)(columns*rows*0.37);
+                minMines=(int)(columns*rows*0.07);
+                minesSeekBar.setMax(maxMines-minMines);
+                minesRangeTextView.setText("mines["+String.valueOf(minMines)+":"+String.valueOf(maxMines)+"]:");
+                maxMines=(int)(columns*rows*0.37);
+                minMines=(int)(columns*rows*0.07);
+                minesRangeTextView.setText("mines["+String.valueOf(minMines)+":"+String.valueOf(maxMines)+"]:");
+                mines=minMines;
+                minesTextView.setText("Value:" + Integer.toString(mines));
+                minesSeekBar.setProgress(0);
             }
 
             @Override
@@ -74,6 +90,16 @@ public class GradeChooseDialog extends Dialog {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 rowTextView.setText("Value:" + Integer.toString(progress+9));
                 rows=progress+9;
+                maxMines=(int)(columns*rows*0.37);
+                minMines=(int)(columns*rows*0.07);
+                minesSeekBar.setMax(maxMines-minMines);
+                minesRangeTextView.setText("mines["+String.valueOf(minMines)+":"+String.valueOf(maxMines)+"]:");
+                maxMines=(int)(columns*rows*0.37);
+                minMines=(int)(columns*rows*0.07);
+                minesRangeTextView.setText("mines["+String.valueOf(minMines)+":"+String.valueOf(maxMines)+"]:");
+                mines=minMines;
+                minesTextView.setText("Value:" + Integer.toString(mines));
+                minesSeekBar.setProgress(0);
             }
 
             @Override
@@ -90,8 +116,8 @@ public class GradeChooseDialog extends Dialog {
             @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                minesTextView.setText("Value:" + Integer.toString(progress+5));
-                mines=progress+5;
+                minesTextView.setText("Value:" + Integer.toString(progress+minMines));
+                mines=progress+minMines;
             }
 
             @Override
@@ -109,7 +135,7 @@ public class GradeChooseDialog extends Dialog {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getContext(), GameActivity.class);
-                intent.putExtra("row",rows);
+                intent.putExtra("raw",rows);
                 intent.putExtra("column",columns);
                 intent.putExtra("mines",mines);
                 getContext().startActivity(intent);

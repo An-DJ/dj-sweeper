@@ -15,6 +15,7 @@
             android:background="#43a047"
             android:orientation="vertical">
             <Button
+                android:background="#fff8e1"
                 android:id="@+id/activity_game_progress_button"
                 android:text="0/0"
                 android:textStyle="bold|italic"
@@ -29,6 +30,7 @@
             android:background="#43a047"
             android:orientation="vertical">
             <Button
+                android:background="#ffecb3"
                 android:id="@+id/activity_game_time_button"
                 android:text="0s"
                 android:textStyle="bold|italic"
@@ -44,6 +46,7 @@
             android:background="#43a047"
             android:orientation="vertical">
             <Button
+                android:background="#ffe082"
                 android:id="@+id/activity_game_mines_button"
                 android:text="0/0"
                 android:textStyle="bold|italic"
@@ -83,16 +86,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="#4dd0e1"
+        android:background="#9e9e9e"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <!--<GridLayout-->
-            <!--android:id="@+id/game_area_grid_layout"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:background="#000000">-->
-        <!--</GridLayout>-->
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="match_parent">

@@ -10,12 +10,13 @@
         android:background="#b2dfbd"
         android:orientation="vertical">
         <TextView
+            android:textColor="#3f51b5"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            android:text="column:"
-            android:textSize="25sp"
-            android:textStyle="bold|italic"
+            android:text="column[9:30]:"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <LinearLayout
@@ -56,12 +57,13 @@
         android:background="#80cbc4"
         android:orientation="vertical">
         <TextView
+            android:textColor="#3f51b5"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            android:text="row:"
-            android:textSize="25sp"
-            android:textStyle="bold|italic"
+            android:text="row[9:30]:"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout
@@ -102,12 +104,14 @@
         android:background="#4db6ac"
         android:orientation="vertical">
         <TextView
+            android:textColor="#3f51b5"
+            android:id="@+id/dialog_grade_text_view_range_mines"
             android:layout_marginLeft="5dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:text="mines:"
-            android:textSize="25sp"
-            android:textStyle="bold|italic"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <LinearLayout

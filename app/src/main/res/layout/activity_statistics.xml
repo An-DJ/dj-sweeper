@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                        <LinearLayout
+                            android:background="#eceff1"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                                <com.github.mikephil.charting.charts.LineChart
+                                    android:id="@+id/time_per_day_line_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:background="#ffffff" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="#cfd8dc"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                                <com.github.mikephil.charting.charts.LineChart
+                                    android:id="@+id/results_per_day_line_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:background="#ffffff" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="#b0bec5"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/c_r_m_per_day_bar_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:background="#ffffff" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="#90a4ae"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                                <com.github.mikephil.charting.charts.PieChart
+                                    android:id="@+id/grade_per_month_pie_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:background="#ffffff" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:background="#78909c"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                                <com.github.mikephil.charting.charts.RadarChart
+                                    android:id="@+id/sweeper_radar_chart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="16dp"
+                                    android:background="#ffffff" />
+                        </LinearLayout>
+                </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>

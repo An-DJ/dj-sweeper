@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import me.andj.djsweeper.MyApplication;
 import me.andj.djsweeper.R;
 import me.andj.djsweeper.dialog.DifficultyDialog;
+import me.andj.djsweeper.service.MusicService;
 
 public class StartActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -23,6 +25,11 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         initialize();
+        Intent intent = new Intent(getApplicationContext(),MusicService.class);
+        startService(intent);
+        if(!MyApplication.musicAble){
+            stopService(intent);
+        }
     }
 
     private void initialize(){
@@ -36,7 +43,6 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         MoreButton.setOnClickListener(this);
         AboutButton.setOnClickListener(this);
         SettingButton.setOnClickListener(this);
-
         difficultyDialog=new DifficultyDialog.Builder(this).create();
     }
 
@@ -47,7 +53,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
                 difficultyDialog.show();
                 break;
             case R.id.start_activity_statistics_button:
-                Intent intent=new Intent(StartActivity.this,GameActivity.class);
+                Intent intent=new Intent(StartActivity.this,StatisticsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.start_activity_more_button:
                 intent=new Intent(StartActivity.this,MoreActivity.class);
@@ -65,5 +72,14 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
 
                 default:
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(MyApplication.musicAble){
+            Intent intent = new Intent(getApplicationContext(),MusicService.class);
+            stopService(intent);
+        }
+        super.onDestroy();
     }
 }

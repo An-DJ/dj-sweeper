@@ -11,17 +11,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <Switch
-            android:textSize="20sp"
+            android:background="#b2ebf2"
+            android:id="@+id/setting_activity_music_switch"
+            android:textSize="18sp"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:text="   Music" />
 
         <Switch
-            android:textSize="20sp"
-            android:id="@+id/switch1"
+            android:background="#80deea"
+            android:textSize="18sp"
+            android:id="@+id/setting_activity_shake_switch"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:text="   Shake" />
     </LinearLayout>
