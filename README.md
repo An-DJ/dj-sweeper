@@ -1,5 +1,5 @@
 # DJSweeper
-An interesting mine sweeper game.
+An interesting mine sweeper game.Try it!
 ## Overview
 <figure class="third">
 <table border="1">
