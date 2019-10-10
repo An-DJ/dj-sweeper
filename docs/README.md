@@ -1,7 +1,6 @@
 # DJSweeper
 An interesting mine sweeper game.Try it!
 ## Overview
-<figure class="third">
 <table border="1">
 <tr>
 <td><img src="https://github.com/An-DJ/DJSweeper/raw/master/overview/minesweeper1.jpg " width=250 height=450></td>
